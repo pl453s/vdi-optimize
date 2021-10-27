@@ -1,7 +1,7 @@
 # VDI Optimize
 
 Automatically mount VDI, zeroing every EXT partitions and compact the VDI file.  
-I recommand to put this into "~/.local/bin" to call it from anywhere.
+I recommand to put this into "~/.local/bin" to call it from everywhere.
 
 Dependencies (and packages in Ubuntu):
 - qemu-nbd (provided by "qemu-utils")
