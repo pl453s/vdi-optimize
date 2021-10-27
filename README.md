@@ -27,7 +27,7 @@ Right examples:
 Wrong examples:
 - ```[ EFI ][ ------ ROOT ------ ][ --- FREE SPACE --- ]```.vdi
 - ```[ EFI ][ BOOT ][ ------ LUKS ROOT ------ ]```.vdi
-- ```[ EFI ][ BOOT ][ ------ LVM ROOT ------- ]```.vdi
+- ```[ EFI ][ BOOT ][ ------ LVM ROOT ------ ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ][ --- HOME --- ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ][ BOOT ]```.vdi
 - ```[ EFI ][ ------  WINDOWS 10 (NTFS) ------ ]```.vdi
