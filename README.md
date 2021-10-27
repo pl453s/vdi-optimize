@@ -20,14 +20,14 @@ To fully exploit this tool:
 Right examples:
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi + ```[ --- HOME --- ]```.vdi
-- ```[ EFI ][ BOOT ][ ------ ROOT ------ ]```
-- ```[ BOOT ]``` + ```[ --- HOME --- ]``` + ```[ --- VAR --- ]```
-- ```------ EXT4 (without partition table) ------```
+- ```[ EFI ][ BOOT ][ ------ ROOT ------ ]```.vdi
+- ```[ BOOT ]```.vdi + ```[ --- HOME --- ]```.vdi + ```[ --- VAR --- ]```.vdi
+- ```------ EXT4 (without partition table) ------```.vdi
 
 Wrong examples:
-- [[ EFI ][     ROOT     ][     FREE SPACE     ]]
-- [[ EFI ][ BOOT ][     LUKS ROOT     ]]
-- [[ EFI ][ BOOT ][     LVM ROOT     ]]
-- [[ EFI ][     ROOT     ][   HOME   ]]
-- [[ EFI ][     ROOT     ][ BOOT ]]
-- [[ EFI ][     WINDOWS 10 (NTFS)     ]]
+- ```[ EFI ][ ------ ROOT ------ ][ --- FREE SPACE --- ]```.vdi
+- ```[ EFI ][ BOOT ][ ------ LUKS ROOT ------ ]```.vdi
+- ```[ EFI ][ BOOT ][ ------ LVM ROOT ------- ]```.vdi
+- ```[ EFI ][ ------ ROOT ------ ][ --- HOME --- ]```.vdi
+- ```[ EFI ][ ------ ROOT ------ ][ BOOT ]```.vdi
+- ```[ EFI ][ ------  WINDOWS 10 (NTFS) ------ ]```.vdi
