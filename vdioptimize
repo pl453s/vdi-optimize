@@ -1,0 +1,61 @@
+#!/bin/bash
+
+echo ======== INITIALIZATION ========
+if ! [ -f "$1" ]
+then
+	echo This file doesn\'t exists
+	exit
+fi
+before=$(du -h "$1")
+sudo modprobe nbd
+echo
+sleep 1
+
+echo ======== MOUNTING VIRTUAL DISK ========
+slot=0
+error=0
+while [ "$error" == "0" ]
+do
+	slot=$(($slot+1))
+	if ! [ -b "/dev/nbd$slot" ]
+	then
+		echo No NBD slot available
+		exit
+	fi
+	lsblk /dev/nbd$slot > /dev/null
+	error=$?
+done
+echo Using /dev/nbd$slot
+sudo qemu-nbd -c /dev/nbd$slot "$1"
+echo
+sleep 1
+
+echo ======== ZEROING /dev/nbd$slot ========
+echo \(This will fail if you have a partition table\)
+sudo zerofree -v /dev/nbd$slot
+echo
+sleep 1
+
+
+for part in /dev/nbd$slot\p*
+do
+	echo ======== ZEROING $part ========
+	sudo zerofree -v $part
+	echo
+	sleep 1
+done
+
+echo ======== UNMOUNTING VIRTUAL DISK ========
+sudo qemu-nbd -d /dev/nbd$slot
+echo
+sleep 1
+
+echo ======== COMPACTING VIRTUAL DISK ========
+vboxmanage modifymedium --compact "$1"
+echo
+sleep 1
+
+echo ======== BEFORE-AFTER COMPARISON ========
+after=$(du -h "$1")
+echo $before
+echo $after
