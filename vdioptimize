@@ -30,15 +30,27 @@ sudo qemu-nbd -c /dev/nbd$slot "$1"
 echo
 sleep 1
 
+echo ======== CHECKING /dev/nbd$slot ========
+echo \(This will fail if you have a partition table\)
+sudo fsck /dev/nbd$slot
+sudo e2fsck -yfv /dev/nbd$slot
+echo
+sleep 1
+
 echo ======== ZEROING /dev/nbd$slot ========
 echo \(This will fail if you have a partition table\)
 sudo zerofree -v /dev/nbd$slot
 echo
 sleep 1
 
-
 for part in /dev/nbd$slot\p*
 do
+	echo ======== CHECKING $part ========
+	sudo fsck $part
+	sudo e2fsck -yfv $part
+	echo
+	sleep 1
+	
 	echo ======== ZEROING $part ========
 	sudo zerofree -v $part
 	echo
