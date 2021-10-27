@@ -19,7 +19,7 @@ To fully exploit this tool:
 
 Right examples:
 - ```{[ EFI ][     ROOT     ]}```
-- ```{[ EFI ][     ROOT     ]} ---and--- {[   HOME   ]}```
+- ```{[ EFI ][     ROOT     ]}``` + ```{[   HOME   ]}```
 - ```{[ EFI ][ BOOT ][     ROOT     ]}```
 - ```{[ BOOT ]} ---and--- {[   HOME   ]} ---and--- {[   VAR   ]}```
 - ```{     EXT4 (without partition table)     }```
