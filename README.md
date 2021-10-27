@@ -18,11 +18,11 @@ To fully exploit this tool:
 - Fill all available space with your large partition
 
 Right examples:
-- ```[[ EFI ][     ROOT     ]]```
-- ```[[ EFI ][     ROOT     ]]``` + ```[[   HOME   ]]```
-- ```[[ EFI ][ BOOT ][     ROOT     ]]```
-- ```[[ BOOT ]]``` + ```[[   HOME   ]]``` + ```[[   VAR   ]]```
-- ```[     EXT4 (without partition table)     ]```
+- ```[ EFI ][ ~~~~~~ ROOT ~~~~~~ ]```
+- ```[ EFI ][ ~~~~~~ ROOT ~~~~~~ ]``` + ```[ ~~~ HOME ~~~ ]```
+- ```[ EFI ][ BOOT ][ ~~~~~~ ROOT ~~~~~~ ]```
+- ```[ BOOT ]``` + ```[ ~~~ HOME ~~~ ]``` + ```[ ~~~ VAR ~~~ ]```
+- ```~~~~~ EXT4 (without partition table) ~~~~~```
 
 Wrong examples:
 - [[ EFI ][     ROOT     ][     FREE SPACE     ]]
