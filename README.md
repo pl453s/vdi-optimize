@@ -21,13 +21,13 @@ Right examples:
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi + ```[ --- HOME --- ]```.vdi
 - ```[ EFI ][ BOOT ][ ------ ROOT ------ ]```.vdi
-- ```[ BOOT ]```.vdi + ```[ --- HOME --- ]```.vdi + ```[ --- VAR --- ]```.vdi
+- ```[ BOOT ]```.vdi + ```[ --- HOME --- ]```.vdi + ```[ --- ROOT --- ]```.vdi
 - ```------ EXT4 (without partition table) ------```.vdi
 
 Wrong examples:
 - ```[ EFI ][ ------ ROOT ------ ][ --- FREE SPACE --- ]```.vdi
 - ```[ EFI ][ BOOT ][ ------ LUKS ROOT ------ ]```.vdi
-- ```[ EFI ][ BOOT ][ ------ LVM ROOT ------ ]```.vdi
+- ```[ EFI ][ BOOT ][ ------ LOGICAL ROOT ------ ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ][ --- HOME --- ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ][ BOOT ]```.vdi
 - ```[ EFI ][ ------  WINDOWS 10 (NTFS) ------ ]```.vdi
