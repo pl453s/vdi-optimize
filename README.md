@@ -21,7 +21,7 @@ Right examples:
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi
 - ```[ EFI ][ ------ ROOT ------ ]```.vdi + ```[ --- HOME --- ]```.vdi
 - ```[ EFI ][ BOOT ][ ------ ROOT ------ ]```.vdi
-- ```[ BOOT ]```.vdi + ```[ --- HOME --- ]```.vdi + ```[ --- ROOT --- ]```.vdi
+- ```[ BOOT ]```.vdi + ```[ --- HOME --- ]```.vdi + ```[ --- VAR --- ]```.vdi
 - ```------ EXT4 (without partition table) ------```.vdi
 
 Wrong examples:
